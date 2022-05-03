@@ -1,12 +1,12 @@
-# Automated Yarr Docker Build
+# Automated Torrentinim Docker Build
 
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/arsfeld/yarr/latest)
-![Check Yarr latest release](https://github.com/arsfeld/yarr-build/workflows/Check%20Yarr%20latest%20release/badge.svg)
-![Build Yarr Docker image](https://github.com/arsfeld/yarr-build/workflows/Build%20Yarr%20Docker%20image/badge.svg)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/arsfeld/torrentinim-build/latest)
+![Check Torrentinim latest release](https://github.com/arsfeld/torrentinim-build/workflows/Check%20Torrentinim%20latest%20release/badge.svg)
+![Build Torrentinim Docker image](https://github.com/arsfeld/torrentinim-build/workflows/Build%20Torrentinim%20Docker%20image/badge.svg)
 
-This repo, upon official release, automatically builds the a Yarr Docker image from the official [nkanaev/yarr](https://github.com/nkanaev/yarr) repository. Automation is done via GitHub [workflows in this repo](https://github.com/arsfeld/yarr-build/tree/main/.github/workflows).
+This repo, upon official release, automatically builds the a Torrentinim Docker image from the official [sergiotapia/torrentinim](https://github.com/sergiotapia/torrentinim) repository. Automation is done via GitHub [workflows in this repo](https://github.com/arsfeld/torrentinim-build/tree/main/.github/workflows).
 
-`docker pull arsfeld/yarr`
+`docker pull arsfeld/torrentinim`
 
 <hr />
 

@@ -1,9 +1,9 @@
-name: Build Yarr Docker image
+name: Build Torrentinim Docker image
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'yarr-version.txt'
+      - 'torrentinim-version.txt'
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -12,17 +12,13 @@ jobs:
         name: Read latest release tag
         id: read-tag
         run: |
-          echo ::set-output name=tag::$(curl -sL https://raw.githubusercontent.com/arsfeld/yarr-build/main/yarr-version.txt)
+          echo ::set-output name=tag::$(curl -sL https://raw.githubusercontent.com/arsfeld/torrentinim-build/main/torrentinim-version.txt)
       -
         name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: 'nkanaev/yarr'
+          repository: 'sergiotapia/torrentinim'
           ref: ${{ steps.read-tag.outputs.tag }}
-      - 
-        name: Remove GOARCH
-        run: |
-          sed -i -e 's/GOARCH=amd64//g' makefile
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -43,5 +39,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/yarr:latest
-            ${{ secrets.DOCKER_USERNAME }}/yarr:${{ steps.read-tag.outputs.tag }}
+            ${{ secrets.DOCKER_USERNAME }}/torrentinim:latest
+            ${{ secrets.DOCKER_USERNAME }}/torrentinim:${{ steps.read-tag.outputs.tag }}
